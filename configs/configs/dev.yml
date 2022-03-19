@@ -1,0 +1,10 @@
+mqtt:
+    broker: localhost
+    port: 1883
+    client:
+        id: go_mqtt_client
+        username: admin
+        password: public
+k3s:
+    namespace: kevin
+    app: app
