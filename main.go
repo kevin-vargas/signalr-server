@@ -16,6 +16,7 @@ import (
 func main() {
 	godotenv.Load(".env")
 	address := "0.0.0.0:8081"
+	//address := "localhost:8081"
 
 	hub := &AppHub{}
 
@@ -35,6 +36,7 @@ func main() {
 		AllowedHeaders:   []string{"X-Requested-With", "X-Signalr-User-Agent"},
 	})
 	handler := c.Handler(router)
+
 	if err := http.ListenAndServe(address, handler); err != nil {
 		log.Fatal("ListenAndServe:", err)
 	}
